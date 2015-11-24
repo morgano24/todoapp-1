@@ -1,0 +1,6 @@
+<%= from_for @todo do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.submit 'Submit' %>
+<%end%>
+<p><%= link_to 'Back', todos_path %></p>

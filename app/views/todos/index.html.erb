@@ -1,0 +1,15 @@
+<h1>This is index</h1>
+<p>Find me in app/views/todos/index.html.erb</p>
+
+<%= link_to 'Todo', new_todo_path %>
+<% if @todo.nil? %>
+  <p>You have no Todos. Why not add <% link_to 'todo', new_todo_path %> ?</p>
+<% else %>
+  <% @todo.each do |todo| %>
+  <h1><%= todo.title %></h1>
+    <p><%= link_to 'Edit', edit_todo_path(todo) %></p>
+    <p><%= link_to 'Index', todos_path %></p>
+    <p><%= link_to 'Delete', todo_path(todo), method: :delete, data: { confrm: 'Are you sure?'} %></p>
+  <% end %>
+<% end %>
+
